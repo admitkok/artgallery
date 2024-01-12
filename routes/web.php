@@ -24,7 +24,6 @@ Route::view('/dashboard', 'dashboard')->middleware(['auth', 'verified'])->name('
 Route::prefix('home')->name('home.')->middleware('auth')->group(function () {
     Route::resource('posts', \App\Http\Controllers\Home\PostController::class);
     Route::get('posts/{post}/toggle-publish', [\App\Http\Controllers\Home\PostTogglePublishController::class, 'toggle'])->name('posts.toggle-publish');
-
 });
 
 Route::middleware('auth')->group(function () {

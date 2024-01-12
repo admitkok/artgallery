@@ -12,10 +12,19 @@ export default {
     theme: {
         extend: {
             fontFamily: {
-                sans: ['Figtree', ...defaultTheme.fontFamily.sans],
+                serif: ['Figtree', ...defaultTheme.fontFamily.serif],
             },
         },
+        fontSize: {
+            '13xl': ['13rem', {
+                lineHeight: '13rem',
+                letterSpacing: '-0.01em',
+                fontWeight: '900',
+            }],
+        },
     },
+
+
 
     plugins: [forms],
 };

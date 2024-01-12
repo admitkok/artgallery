@@ -41,6 +41,11 @@
                                 </td>
                                 <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
                                     <a href="{{route('home.posts.edit', $post)}}" class="text-indigo-600 hover:text-indigo-900">Edit<span class="sr-only">, Lindsay Walton</span></a>
+                                    <form action="{{route('home.posts.destroy', $post)}}" method="post">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button class="text-indigo-700">Delete</button>
+                                    </form>
                                 </td>
                             </tr>
                             @endforeach

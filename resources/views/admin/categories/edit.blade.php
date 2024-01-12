@@ -1,5 +1,3 @@
-
-
 <x-site-layout title="ADMIN ZONE - CATEGORIES - EDIT">
 
 

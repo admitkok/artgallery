@@ -1,8 +1,5 @@
-
-
-
-
-<x-site-layout title="Authors overview">
+<x-site-layout title="">
+    <div class="text-9xl pb-24 items-center font-italic">Authors overview</div>
     <p class="mb-6">We currently have {{$users->count()}} active authors</p>
     <ul class="grid grid-cols-2 gap-4">
         @foreach($users as $user)

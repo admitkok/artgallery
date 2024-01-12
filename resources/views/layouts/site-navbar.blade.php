@@ -1,44 +1,50 @@
-<nav x-data="{ mobile_menu_visible: false }" class="bg-gray-800">
+<nav x-data="{ mobile_menu_visible: false }" class="z-50 fixed w-full bg-opacity-25 p-2 rounded-md backdrop-blur-md shadow-lg font-serif">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="flex h-16 items-center justify-between">
             <div class="flex items-center">
                 <div class="flex-shrink-0">
                     <img class="h-8 w-8" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500" alt="Your Company">
                 </div>
-
-                <div class="hidden md:block">
+            </div>
+                <div class="hidden md:block ">
                     <div class="ml-10 flex items-baseline space-x-4">
 
                         @foreach($menu_items as $item)
                             @if(request()->routeIs($item['route']))
-                                <a href="{!! $item['url'] ?? route($item['route']) !!}" class="bg-gray-600 text-white rounded-md px-3 py-2 text-sm font-medium" aria-current="page">{{$item['label']}}</a>
+                                <div class=" justify-center mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8 relative inline-block group">
+                                    <a href="{!! $item['url'] ?? route($item['route']) !!}" class="border-b border-orange-500 px-6 py-6 text-md font-serif font-light" aria-current="page">{{$item['label']}}</a>
+                                    <div class="absolute bottom-0 right-0 bg-orange-500 h-px w-0"></div>
+                                </div>
                             @else
-                                <a href="{!! $item['url'] ?? route($item['route']) !!}" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">{{$item['label']}}</a>
+                                <div class=" justify-center mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8 relative inline-block group">
+                                    <a href="{!! $item['url'] ?? route($item['route']) !!}" class="group-hover:text-gray-600 rounded-md text-md font-light ">{{$item['label']}}</a>
+                                    <div class="absolute bottom-0 right-0 bg-orange-500 h-px w-0 transition-all duration-500 group-hover:w-full animate-drawUnderline"></div>
+                                </div>
                             @endif
                         @endforeach
 
-                            <div>
-                                @foreach(['en','fa', 'ru', 'nl'] as $language)
-                                    @if(session()->get('locale') == $language)
-                                        <span class="text-purple-500 font-bold uppercase">{{$language}}</span>
-                                    @else
-                                        <a href="{{route('lang.switch', ['locale' => $language])}}" class="text-white uppercase">{{$language}}</a>
-                                    @endif
-                                @endforeach
-                            </div>
+{{--                            <div>--}}
+{{--                                @foreach(['en','fa', 'ru', 'nl'] as $language)--}}
+{{--                                    @if(session()->get('locale') == $language)--}}
+{{--                                        <span class="text-purple-500 font-bold uppercase">{{$language}}</span>--}}
+{{--                                    @else--}}
+{{--                                        <a href="{{route('lang.switch', ['locale' => $language])}}" class="text-white uppercase">{{$language}}</a>--}}
+{{--                                    @endif--}}
+{{--                                @endforeach--}}
+{{--                            </div>--}}
 
                     </div>
                 </div>
-            </div>
+
             <div class="hidden md:block">
                 <div class="ml-4 flex items-center md:ml-6">
-                    <button type="button" class="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
-                        <span class="absolute -inset-1.5"></span>
-                        <span class="sr-only">View notifications</span>
-                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0" />
-                        </svg>
-                    </button>
+{{--                    <button type="button" class="relative rounded-full p-2 text-orange-500 hover:border hover:text-orange-300 border-white focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 focus:ring-offset-orange-600">--}}
+{{--                        <span class="absolute -inset-1.5"></span>--}}
+{{--                        <span class="sr-only">View notifications</span>--}}
+{{--                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">--}}
+{{--                            <path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0" />--}}
+{{--                        </svg>--}}
+{{--                    </button>--}}
 
                     <!-- Profile dropdown -->
                     @guest

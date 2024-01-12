@@ -9,10 +9,10 @@
     </div>
     @endif
 
-    <img src="{{$post->getImageUrl('thumbnail')}}" alt="{{$post->title}}" class="mb-4">
+    <img src="{{$post->getImageUrl('preview')}}" alt="{{$post->title}}" class="mb-4 w-[50rem]">
 
     @foreach($post->categories as $category)
-        <a href="{{route('categories.show', ['id' => $category->id])}}" class="bg-teal-500 mb-4 text-white rounded-full py-1 px-4 text-sm">
+        <a href="{{route('categories.show', ['id' => $category->id])}}" class="fill-button bg-purple-700 mb-4 text-white rounded-full py-1 px-4 text-sm">
             {{$category->name}}
         </a>
     @endforeach

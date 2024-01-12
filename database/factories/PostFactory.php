@@ -37,16 +37,15 @@ class PostFactory extends Factory
         });
     }
 
-    /*
+
     public function configure()
     {
          return $this->afterCreating(function (Post $post) {
-            $url = 'https://source.unsplash.com/random/1200x800';
-            $post
-                ->addMediaFromUrl($url)
+//            $url = 'https://source.unsplash.com/random/1200x800';
+            $post->addMedia(public_path('images/1.jpeg'))
                 ->toMediaCollection();
         });
-    }*/
+    }
 
     // Solution from https://laracasts.com/discuss/channels/testing/how-to-disable-factory-callbacks
     public function withoutAfterCreating()

@@ -97,8 +97,9 @@ class PostController extends Controller
     public function destroy(Post $post)
     {
         $this->checkIfUserHasAccess($post);
-
-        // delete actions
+        $post->delete();
+        session()->flash('success_notification', 'Post deleted successfully.');
+        return redirect()->route('home.posts.index');
     }
 
     private function checkIfUserHasAccess(Post $post)

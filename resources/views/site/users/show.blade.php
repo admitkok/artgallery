@@ -9,7 +9,7 @@
     <ul class="list-disc ml-5">
         @foreach($user->posts as $post)
             <li>
-                <a href="{{route('posts.show', ['id' => $post->id])}}">{{$post->title}}</a>
+                <a href="{{route('posts.show', $post->slug)}}">{{$post->title}}</a>
             </li>
         @endforeach
     </ul>

@@ -15,16 +15,16 @@ class DatabaseSeeder extends Seeder
     {
         \App\Models\Category::factory(5)->create();
         \App\Models\User::factory(10)->create();
-        $posts = \App\Models\Post::factory(10)->create();
+        $posts = \App\Models\Post::factory(1)->create();
 
         foreach($posts as $post) {
             $post->categories()->attach([rand(1,5), rand(1,5)]);
         }
 
         User::create([
-          'name' => 'Nico',
-          'email' => 'nico@deblauwe.be',
-          'password' => '$2y$12$NcMAoaOmrpeQ124puIArRuEz8C35sBWw3e5YlsYZYO7ixpNaa7Qzi',
+          'name' => 'Alex',
+          'email' => 'kokov.alexander@gmail.com',
+          'password' => 'alex2003',
           'is_admin' => true,
         ]);
 
