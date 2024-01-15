@@ -3,7 +3,7 @@
         {{$posts->links()}}
     </div>
 
-    <div class="text-9xl pb-24 items-center font-italic">POSTS</div>
+    <div class="text-9xl pb-24 items-center font-italic">Posts</div>
 
     <ul class="grid grid-cols-2 gap-10">
     @foreach($posts as $post)

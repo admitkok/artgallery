@@ -24,7 +24,7 @@ class WelcomeNewUser extends Notification
     public function toMail(object $notifiable): MailMessage
     {
         return (new MailMessage)
-            ->subject('Welcome to HSdemo Blog')
+            ->subject('Welcome to the Art Gallery')
             ->greeting('Hello ' . $notifiable->name.',')
             ->line('Welcome to our <strong>great blog</strong>, we are sure you are going to enjoy')
             ->action('Read the latest articles', route('posts.index'))

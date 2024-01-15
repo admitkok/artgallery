@@ -44,7 +44,21 @@
         transition: background-size 0.5s ease; /* Transition for smoother effect */
     }
 
+    .fill-button1 {
+        background: linear-gradient(to right, #FF9800, #F57C00); /* Gradient colors */
+        color: #fff; /* Text color */
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        background-size: 0% 100%;
+        background-position: 0% 0%;
+        transition: background-size 0.5s ease; /* Transition for smoother effect */
+    }
+
     .fill-button:hover {
+        animation: fillAnimation 1s forwards; /* Play the animation on hover */
+    }
+    .fill-button1:hover {
         animation: fillAnimation 1s forwards; /* Play the animation on hover */
     }
 </style>

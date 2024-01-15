@@ -7,13 +7,13 @@
                 </div>
             </div>
                 <div class="hidden md:block ">
-                    <div class="ml-10 flex items-baseline space-x-4">
+                    <div class="ml-10 flex items-baseline space-x-4 ">
 
                         @foreach($menu_items as $item)
                             @if(request()->routeIs($item['route']))
                                 <div class=" justify-center mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8 relative inline-block group">
-                                    <a href="{!! $item['url'] ?? route($item['route']) !!}" class="border-b border-orange-500 px-6 py-6 text-md font-serif font-light" aria-current="page">{{$item['label']}}</a>
-                                    <div class="absolute bottom-0 right-0 bg-orange-500 h-px w-0"></div>
+                                    <a href="{!! $item['url'] ?? route($item['route']) !!}" class="py-6 text-md font-serif font-light" aria-current="page">{{$item['label']}}</a>
+                                    <div class="absolute bottom-0 right-0 bg-orange-500 h-px w-full"></div>
                                 </div>
                             @else
                                 <div class=" justify-center mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8 relative inline-block group">
@@ -49,12 +49,12 @@
                     <!-- Profile dropdown -->
                     @guest
                         <div class="text-white">
-                            <a href="{{route('register')}}" class="text-white uppercase py-.5 px-2">{{__('Register')}}</a>
+                            <a href="{{route('register')}}" class="text-gray-700 uppercase py-.5 px-2">{{__('Register')}}</a>
                         </div>
 
 
                         <div class="text-white">
-                            <a href="{{route('login')}}" class="text-white border border-white uppercase py-.5 px-2">LOGIN</a>
+                            <a href="{{route('login')}}" class="text-gray-700 border border-gray-700 uppercase py-.5 px-2">LOGIN</a>
                         </div>
 
                     @endguest
@@ -179,7 +179,7 @@
 
 
                 <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white">Your Profile</a>
-                <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white">Settings</a>
+{{--                <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white">Settings</a>--}}
                 <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white">Sign out</a>
             </div>
         </div>
