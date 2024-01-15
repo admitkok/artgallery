@@ -28,9 +28,5 @@ class DatabaseSeeder extends Seeder
           'is_admin' => true,
         ]);
 
-        Post::create([
-
-        ]);
-
     }
 }
