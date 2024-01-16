@@ -7,7 +7,7 @@
 
     <h2 class="font-bold">Posts by this author</h2>
     <ul class="flex flex-nowrap ml-4">
-        @foreach($category->posts as $post)
+        @foreach($user->posts as $post)
             <li class="grid grid-rows-1 overflow-hidden bg-gray-200 bg-opacity-25 backdrop-blur-lg shadow-md border border-white hover:shadow-lg rounded-lg group overflow-hidden duration-500 hover:scale-110">
                 <a href="{{route('posts.show', ['post' => $post])}}" class="rounded bg-reg-500 w-full overflow-hidden">
                     <img src="{{$post->media->first() ? $post->media->first()->getUrl('preview') : "2.jpeg"}}" class="w-full rounded-lg group-hover:scale-110 transition overflow-hidden duration-500">
