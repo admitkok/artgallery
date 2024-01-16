@@ -6,10 +6,14 @@
     "license": "MIT",
     "require": {
         "php": "^8.1",
+        "fakerphp/faker": "^1.9.1",
         "guzzlehttp/guzzle": "^7.2",
         "laravel/framework": "^10.10",
         "laravel/sanctum": "^3.3",
         "laravel/tinker": "^2.8",
+        "league/flysystem-aws-s3-v3": "^3.22",
+        "league/flysystem-read-only": "^3.0",
+        "spatie/laravel-ignition": "^2.4",
         "spatie/laravel-medialibrary": "^10.0.0",
         "spatie/laravel-ray": "^1.33",
         "symfony/http-client": "^6.4",
@@ -18,7 +22,6 @@
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.9",
-        "fakerphp/faker": "^1.9.1",
         "laravel-lang/attributes": "^2.5",
         "laravel-lang/lang": "^13.8",
         "laravel-lang/publisher": "^15.0",
@@ -29,8 +32,7 @@
         "nunomaduro/collision": "^7.0",
         "pestphp/pest": "^2.0",
         "pestphp/pest-plugin-laravel": "^2.0",
-        "roave/security-advisories": "dev-latest",
-        "spatie/laravel-ignition": "^2.0"
+        "roave/security-advisories": "dev-latest"
     },
     "autoload": {
         "psr-4": {
