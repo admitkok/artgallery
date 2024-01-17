@@ -1,6 +1,3 @@
-
-
-
 <x-site-layout title="{{$post->title}}">
 
     @if(session()->has('referrer'))

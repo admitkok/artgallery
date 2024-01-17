@@ -1,5 +1,3 @@
-
-
 <x-site-layout title="{{$user->name}}">
 
     {{$user->email}}

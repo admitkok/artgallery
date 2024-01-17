@@ -3,7 +3,7 @@
         <div class="flex h-16 items-center justify-between">
             <div class="flex items-center">
                 <div class="flex-shrink-0">
-                    <img class="h-12" src="images/AG_logo.png" alt="Your Company">
+                    <img class="h-12" src="/images/AG_logo.png" alt="Your Company">
                 </div>
             </div>
                 <div class="hidden md:block ">
