@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="utf-8">
+    <link rel="icon" href="public/AG_logo.ico" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>ArtGallery</title>
     <script src="https://cdn.tailwindcss.com"></script>
