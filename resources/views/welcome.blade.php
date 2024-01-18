@@ -34,9 +34,14 @@
             </ul>
         </div>
 
-        <div class="w-1/3 rounded-sm p-4">
+        <div class="w-1/3 p-4">
+            <div class="flex text-xl rounded-lg border border-gray-300 p-9">
+                <h1 class="font-serif">“{{$joke->joke}}”</h1>
+            </div>
+            <br>
             <h1 class="font-bold text-7xl">
-                Step into a realm of creativity and imagination at our online art gallery. Explore a curated collection of mesmerizing artworks that transcend boundaries</h1>
+                Step into a realm of creativity and imagination at our online art gallery. Explore a curated collection of mesmerizing artworks that transcend boundaries
+            </h1>
             {{--<div class="grid gap-4">
                 @foreach($authors as $author)
                     <div>

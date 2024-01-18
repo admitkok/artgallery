@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Post;
 use App\Models\User;
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Http;
 
 class WelcomeController extends Controller
 {
@@ -22,6 +23,36 @@ class WelcomeController extends Controller
             return User::select(['name'])->with('posts')->get();
         });
 
-        return view('welcome', compact('recent_news', 'authors'));
+        $riddle = $this->getRiddle();
+        $joke = $this->getJoke();
+        ray($riddle);
+        ray($joke);
+
+        return view('welcome', compact('recent_news', 'authors', 'riddle', 'joke'));
     }
+    private function getRiddle():object
+    {
+        $endpoint = "https://api.api-ninjas.com/v1/riddles";
+        $api_key = "Wyi27LYBZ4b8W7vfqgZ+Ww==yvK6t75Bj21Y4BCP";
+
+        $response = Http::acceptJson()
+            ->withHeaders(['X-API-KEY' => $api_key])
+            ->get($endpoint);
+
+        return json_decode($response->body())[0];
+    }
+
+    private function getJoke():object
+    {
+        $endpoint = "https://api.api-ninjas.com/v1/dadjokes";
+        $api_key = "Wyi27LYBZ4b8W7vfqgZ+Ww==yvK6t75Bj21Y4BCP";
+
+        $response = Http::acceptJson()
+            ->withHeaders(['X-API-KEY' => $api_key])
+            ->get($endpoint);
+
+        return json_decode($response->body())[0];
+    }
+
+
 }
