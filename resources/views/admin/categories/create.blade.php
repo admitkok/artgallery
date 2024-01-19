@@ -1,5 +1,3 @@
-
-
 <x-site-layout title="ADMIN ZONE - CATEGORIES">
 
     <form action="{{route('admin.categories.store')}}" method="post">
