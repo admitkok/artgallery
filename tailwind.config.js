@@ -12,17 +12,12 @@ export default {
     theme: {
         extend: {
             fontFamily: {
-                serif: ['Figtree', ...defaultTheme.fontFamily.serif],
+                poppins: ["Poppins",'sans-serif'],
             },
         },
-        fontSize: {
-            '13xl': ['13rem', {
-                lineHeight: '13rem',
-                letterSpacing: '-0.01em',
-                fontWeight: '900',
-            }],
-        },
     },
+
+
 
 
 

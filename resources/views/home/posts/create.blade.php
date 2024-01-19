@@ -1,6 +1,6 @@
 <x-site-layout title="Create new post">
 
-    <form action="{{route('home.posts.store')}}" method="post" enctype="multipart/form-data">
+    <form action="{{route('home.posts.store')}}" method="post" enctype="multipart/form-data" class="space-y-4">
 
         @csrf
 
@@ -36,9 +36,9 @@
         <label for="file">File</label>
         <input name="image" type="file" />
 
-        <br/>
-
-        <button type="submit">Create</button>
+        <div class="w-1/12 bg-indigo-600 text-white px-4 py-2 rounded-lg text-center">
+            <button type="submit">Create</button>
+        </div>
     </form>
 
 </x-site-layout>

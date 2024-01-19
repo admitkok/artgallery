@@ -1,15 +1,15 @@
 <x-site-layout title="{{$category->name}}">
 
-    All the posts with this category
+    <h1 class="pb-4 font-semibold text-xl">All the posts with this category</h1>
 
-    <ul class="flex flex-nowrap ml-4">
+    <ul class="grid grid-cols-4 ml-4 gap-6">
         @foreach($category->posts as $post)
-            <li class="grid grid-rows-1 overflow-hidden bg-gray-200 bg-opacity-25 backdrop-blur-lg shadow-md border border-white hover:shadow-lg rounded-lg group overflow-hidden duration-500 hover:scale-110">
-                <a href="{{route('posts.show', ['post' => $post])}}" class="rounded bg-reg-500 w-full overflow-hidden">
-                    <img src="{{$post->media->first() ? $post->media->first()->getUrl('preview') : "2.jpeg"}}" class="w-full rounded-lg group-hover:scale-110 transition overflow-hidden duration-500">
+            <li class="grid grid-rows-1 overflow-hidden bg-gray-300 bg-opacity-25 backdrop-blur-lg shadow-md border border-white hover:shadow-lg rounded-lg group overflow-hidden duration-500 hover:scale-110">
+                <a href="{{route('posts.show', ['post' => $post])}}" class="bg-reg-500 w-full overflow-hidden">
+                    <img src="{{$post->media->first() ? $post->media->first()->getUrl('preview') : "2.jpeg"}}" class="w-full group-hover:scale-110 transition overflow-hidden duration-500">
                 </a>
 
-                <div class="bg-gray-200 bg-opacity-25 p-2 rounded-md backdrop-blur-lg">
+                <div class="">
                     <div class="col-span-2 p-2">
                         <div class="flex gap-x-2 mb-2">
                             @foreach($post->categories as $category)

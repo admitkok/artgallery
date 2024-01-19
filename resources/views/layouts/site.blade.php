@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en"  class="h-full bg-white font-serif">
+<html lang="en"  class="h-full bg-white font-poppins">
 
 <head>
     <meta charset="utf-8">
@@ -42,6 +42,7 @@
         background-size: 0% 100%;
         background-position: 0% 0%;
         transition: background-size 0.5s ease; /* Transition for smoother effect */
+        transition: box-shadow 0.5s ease; /* Transition for smoother effect */
     }
 
     .fill-button1 {
@@ -61,6 +62,18 @@
     .fill-button1:hover {
         animation: fillAnimation 1s forwards; /* Play the animation on hover */
     }
+    .button {
+        /* Set initial box shadow */
+        box-shadow: 0 0px 0px rgba(0, 0, 0, 0.1);
+        /* Add transition for smooth effect */
+        transition: box-shadow 0.3s ease-in-out;
+    }
+
+    .button:hover {
+        /* Change box shadow on hover */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
 </style>
 
 <body class="h-full">

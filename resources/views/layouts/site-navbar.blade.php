@@ -1,10 +1,10 @@
-<nav x-data="{ mobile_menu_visible: false }" class="z-50 fixed w-full bg-opacity-25 p-2 rounded-md backdrop-blur-md shadow-lg font-serif">
+<nav x-data="{ mobile_menu_visible: false }" class="z-50 fixed w-full bg-opacity-25 p-2 rounded-md backdrop-blur-md shadow-lg font-poppins">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="flex h-16 items-center justify-between">
             <div class="flex items-center">
-                <div class="flex-shrink-0">
+                <a href="{{route('welcome')}}" class="flex-shrink-0">
                     <img class="h-12" src="/images/AG_logo.png" alt="Your Company">
-                </div>
+                </a>
             </div>
                 <div class="hidden md:block ">
                     <div class="ml-10 flex items-baseline space-x-4 ">
@@ -12,12 +12,12 @@
                         @foreach($menu_items as $item)
                             @if(request()->routeIs($item['route']))
                                 <div class=" justify-center mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8 relative inline-block group">
-                                    <a href="{!! $item['url'] ?? route($item['route']) !!}" class="py-6 text-md font-serif font-light" aria-current="page">{{$item['label']}}</a>
+                                    <a href="{!! $item['url'] ?? route($item['route']) !!}" class="py-6 text-md font-light" aria-current="page">{{$item['label']}}</a>
                                     <div class="absolute bottom-0 right-0 bg-orange-500 h-px w-full"></div>
                                 </div>
                             @else
                                 <div class=" justify-center mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8 relative inline-block group">
-                                    <a href="{!! $item['url'] ?? route($item['route']) !!}" class="group-hover:text-gray-600 rounded-md text-md font-light ">{{$item['label']}}</a>
+                                    <a href="{!! $item['url'] ?? route($item['route']) !!}" class="group-hover:text-gray-400 rounded-md text-md font-light ">{{$item['label']}}</a>
                                     <div class="absolute bottom-0 right-0 bg-orange-500 h-px w-0 transition-all duration-500 group-hover:w-full animate-drawUnderline"></div>
                                 </div>
                             @endif

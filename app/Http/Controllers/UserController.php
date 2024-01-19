@@ -17,8 +17,10 @@ class UserController extends Controller
 
     public function show(User $user)
     {
+        $user = $user->load('posts.media', 'posts.categories', 'posts.author');
         return view('site.users.show', [
             'user' => $user,
         ]);
+
     }
 }
