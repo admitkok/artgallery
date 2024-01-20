@@ -13,7 +13,7 @@
                     <div class="col-span-2 p-2">
                         <div class="flex gap-x-2 mb-2">
                             @foreach($post->categories as $category)
-                                <a href="{{route('categories.show', ['id' => $category->id])}}" class="fill-button uppercase bg-purple-700 hover:bg-teal-600 text-white rounded-full py-1 px-4 text-xs">
+                                <a href="{{route('categories.show', ['id' => $category->id])}}" class="fill-button uppercase bg-black hover:bg-teal-600 text-white rounded-full py-1 px-4 text-xs">
                                     {{$category->name}}
                                 </a>
                             @endforeach

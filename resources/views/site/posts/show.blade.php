@@ -12,7 +12,7 @@
         </div>
         <div class="w-1/3 justify-items-center space-y-6 pl-9">
             @foreach($post->categories as $category)
-                <a href="{{route('categories.show', ['id' => $category->id])}}" class="fill-button bg-purple-700 mb-4 text-white rounded-full py-1 px-4 text-lg duration-500 hover:shadow-md">
+                <a href="{{route('categories.show', ['id' => $category->id])}}" class="fill-button bg-black mb-4 text-white rounded-full py-1 px-4 text-lg duration-500 hover:shadow-md">
                     {{$category->name}}
                 </a>
             @endforeach

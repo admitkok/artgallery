@@ -8,6 +8,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="//unpkg.com/alpinejs" defer></script>
     <script src="script.js"></script>
+    @livewireStyles
 </head>
 
 <style>
@@ -34,19 +35,19 @@
        }
 
     .fill-button {
-        background: linear-gradient(to right, #7E57C2, #7B1FA2); /* Gradient colors */
+        background: linear-gradient(to right, #FF9800, #F05C00); /* Gradient colors #7E57C2, #7B1FA2 */
         color: #fff; /* Text color */
         padding: 10px 20px;
         border: none;
         cursor: pointer;
         background-size: 0% 100%;
         background-position: 0% 0%;
-        transition: background-size 0.5s ease; /* Transition for smoother effect */
-        transition: box-shadow 0.5s ease; /* Transition for smoother effect */
+        transition: background-size 1s ease; /* Transition for smoother effect */
+        transition: box-shadow 1s ease; /* Transition for smoother effect */
     }
 
     .fill-button1 {
-        background: linear-gradient(to right, #FF9800, #F57C00); /* Gradient colors */
+        background: linear-gradient(to right, #FF9800, #F05C00); /* Gradient colors */
         color: #fff; /* Text color */
         padding: 10px 20px;
         border: none;
@@ -96,7 +97,7 @@
 {{--    <x-featured-news/>--}}
 
 </div>
-
+@livewireScripts
 </body>
 
 </html>

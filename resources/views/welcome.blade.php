@@ -13,10 +13,8 @@
             </ul>
         </div>
 
-        <div class="w-1/3 p-4">
-            <div class="flex text-xl rounded-lg border border-gray-300 p-9 shadow shadow-md hover:scale-110 duration-500">
-                <h1 class="font-serif italic ">“{{$joke->joke}}”</h1>
-            </div>
+        <div class="w-1/3 px-4">
+            <livewire:quotes />
             <br>
             <h1 class="font-bold text-7xl">
                 Step into a realm of creativity and imagination at our online art gallery. Explore a curated collection of mesmerizing artworks that transcend boundaries
