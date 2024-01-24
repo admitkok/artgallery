@@ -8,8 +8,10 @@ class UserController extends Controller
 {
     public function index()
     {
-        $users = User::select(['id', 'name'])->withCount('posts')->get();
-
+        $users = User::select(['id', 'name'])
+            ->withCount('posts')
+            ->with('posts.media', 'posts.categories', 'posts.author')
+            ->get();
         return view('site.users.index', [
             'users' => $users,
         ]);

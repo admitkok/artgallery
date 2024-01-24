@@ -8,6 +8,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="//unpkg.com/alpinejs" defer></script>
     <script src="script.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     @livewireStyles
 </head>
 
@@ -76,6 +77,21 @@
     }
 
 </style>
+<script>
+    var swiper = new Swiper('.swiper-container', {
+        slidesPerView: 1,
+        spaceBetween: 10,
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+    });
+</script>
+
 
 <body class="h-full">
 <div class="min-h-full">
@@ -97,6 +113,7 @@
 {{--    <x-featured-news/>--}}
 
 </div>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 @livewireScripts
 </body>
 

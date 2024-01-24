@@ -3,14 +3,16 @@
 namespace Database\Factories;
 
 use App\Models\Post;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Illuminate\Support\Collection;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Post>
  */
 class PostFactory extends Factory
 {
+    private bool $generate_images = false;
+
     /**
      * Define the model's default state.
      *
@@ -24,7 +26,7 @@ class PostFactory extends Factory
             'is_flagged' => fake()->boolean(20),
             'is_featured' => fake()->boolean(35),
             'published_at' => fake()->optional()->dateTimeBetween('-1 year', 'now'),
-            'author_id' => fake()->numberBetween(1, 10),
+            'author_id' => User::factory(),
         ];
     }
 
@@ -32,26 +34,26 @@ class PostFactory extends Factory
     {
         return $this->state(function (array $attributes) {
             return [
-                'published_at' => fake()->dateTimeBetween('-1 year', 'now'),
+                'published_at' => fake()->dateTimeBetween('-1 year', '-1 day'),
             ];
         });
     }
 
-
     public function configure()
     {
-         return $this->afterCreating(function (Post $post) {
-//            $url = 'https://source.unsplash.com/random/1200x800';
-            $post->addMedia(public_path('images/1.jpeg'))
-                ->toMediaCollection();
+        return $this->afterCreating(function (Post $post) {
+            return $post;
         });
     }
 
     // Solution from https://laracasts.com/discuss/channels/testing/how-to-disable-factory-callbacks
-    public function withoutAfterCreating()
+    public function withImages(): self
     {
-        $this->afterCreating = new Collection;
-
-        return $this;
+        return $this->afterCreating(function (Post $post) {
+            $url = 'https://loremflickr.com/320/240';
+            $post
+                ->addMediaFromUrl($url)
+                ->toMediaCollection();
+        });
     }
 }

@@ -1,4 +1,4 @@
-<x-site-layout title="{{$category->name}}">
+<x-site-layout title="#{{$category->name}}">
 
     <h1 class="pb-4 font-semibold text-xl">All the posts with this category</h1>
 

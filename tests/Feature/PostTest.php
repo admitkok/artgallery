@@ -13,8 +13,7 @@ test('posts index page is being displayed', function () {
 
 test('posts show page is being displayed', function () {
     // Arrange
-    $author = User::factory()->create();
-    $post = Post::factory()->create(['author_id' => 1]);
+    $post = Post::factory()->create();
 
     // Act
     $response = $this->get('/posts/'.$post->slug);
@@ -29,7 +28,7 @@ test('posts show page contains title, body and author info', function () {
     $post = Post::factory()->create(['author_id' => 1]);
 
     // Act
-    $response = $this->get('/posts/' . $post->slug);
+    $response = $this->get('/posts/'.$post->slug);
 
     // Assert
     $response->assertSeeInOrder([$post->title, $post->author->name, $post->body]);

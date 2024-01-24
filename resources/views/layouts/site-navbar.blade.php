@@ -1,4 +1,4 @@
-<nav x-data="{ mobile_menu_visible: false }" class="z-50 fixed w-full bg-opacity-25 p-2 rounded-md backdrop-blur-md shadow-lg font-poppins">
+<nav x-data="{ mobile_menu_visible: false }" class="z-50 fixed w-full bg-white bg-opacity-40 p-2 rounded-md backdrop-blur-md shadow-lg font-poppins">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="flex h-16 items-center justify-between">
             <div class="flex items-center">
