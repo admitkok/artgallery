@@ -25,8 +25,6 @@ class WelcomeController extends Controller
 
         $riddle = $this->getRiddle();
         $joke = $this->getJoke();
-        ray($riddle);
-        ray($joke);
 
         return view('welcome', compact('recent_news', 'authors', 'riddle', 'joke'));
     }

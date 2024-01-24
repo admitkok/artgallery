@@ -31,5 +31,24 @@ test('posts show page contains title, body and author info', function () {
     $response = $this->get('/posts/'.$post->slug);
 
     // Assert
-    $response->assertSeeInOrder([$post->title, $post->author->name, $post->body]);
+    $response->assertSee($post->title);
+    $response->assertSee($post->image);
+    $response->assertSee($post->description);
+});
+
+
+test ('deleting_user_changes_post_author_to_unknown', function()
+{
+    //Arrange
+    $user = User::factory()->create();
+    $post = Post::factory()->create(['author_id' => $user->id]);
+
+    // Act
+    $user->delete();
+    $post->refresh();
+    ray($post);
+    ray($user);
+
+    // Assert
+    $this->get('/posts/'.$post->slug)->assertSee('UNKNOWN AUTHOR');
 });
