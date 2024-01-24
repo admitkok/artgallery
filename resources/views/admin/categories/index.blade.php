@@ -1,7 +1,7 @@
 <x-site-layout title="">
     <div class="text-3xl pb-24 items-center italic">ADMIN - CATEGORIES</div>
     <div class="flex justify-end">
-        <button class="shadow py-2 px-4 rounded-lg bg-indigo-700 text-lg text-white hover:bg-indigo-600" hef="{{route('admin.categories.create')}}">Create a category</button>
+        <a class="shadow py-2 px-4 rounded-lg bg-indigo-700 text-lg text-white hover:bg-indigo-600" href="{{route('admin.categories.create')}}">Create a category</a>
     </div>
     <br/>
 
